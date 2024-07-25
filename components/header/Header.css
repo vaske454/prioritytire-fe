@@ -1,0 +1,23 @@
+@tailwind components;
+
+@layer components {
+    .page-header {
+        @apply bg-white border-b border-gray-200 mb-5 sticky top-0 z-50;
+    }
+
+    .header.content {
+        @apply pl-[40px] pr-[40px] pb-[16px] pt-[16px] flex items-center justify-between;
+    }
+
+    a {
+        @apply text-[#231f20] no-underline;
+    }
+
+    .logo {
+        @apply m-0 mr-auto max-w-max min-h-[40px] pr-[20px] w-[25%] inline-flex float-left ml-10 max-w-[50%] relative z-50 items-center;
+    }
+
+    .block-search-wrapper {
+        @apply w-[50%]
+    }
+}
