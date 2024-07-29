@@ -6,7 +6,7 @@ import Header from '@/components/header/Header';
 import Navigation from '@/components/blocks/navigation/Navigation';
 import HeroBanner from '@/components/blocks/hero-banner/HeroBanner';
 import RebatesSlider from '@/components/blocks/rebates-slider/RebatesSlider';
-import PromotionsSection from '@/components/blocks/promotions-section/PromotionsSection';
+import Promotions from '@/components/blocks/promotions/Promotions';
 
 async function fetchProducts() {
   try {
@@ -36,7 +36,7 @@ export default async function Home() {
       <Navigation />
       <HeroBanner />
       <RebatesSlider />
-      <PromotionsSection />
+      <Promotions />
       {/*<div>*/}
       {/*  <h1>Products</h1>*/}
       {/*  <ul>*/}
