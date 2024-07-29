@@ -1,7 +1,7 @@
 const RebatesSlider = () => {
   return (
     <>
-      <p>RebatesSlider</p>
+      <p>Save with Rebates</p>
     </>
   );
 };
