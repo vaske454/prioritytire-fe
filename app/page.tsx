@@ -4,6 +4,7 @@ import { Product } from '@/types/Product';
 import ErrorPage from '../components/ErrorPage';
 import Header from '@/components/header/Header';
 import Navigation from '@/components/blocks/navigation/Navigation';
+import HeroBanner from '@/components/blocks/hero-banner/HeroBanner';
 
 async function fetchProducts() {
   try {
@@ -31,6 +32,7 @@ export default async function Home() {
     <main className="flex min-h-[100vh] flex-col relative">
       <Header />
       <Navigation />
+      <HeroBanner />
       {/*<div>*/}
       {/*  <h1>Products</h1>*/}
       {/*  <ul>*/}
