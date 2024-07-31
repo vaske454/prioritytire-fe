@@ -1,20 +1,10 @@
-export interface ProductPrice {
-  regularPrice: {
-    amount: {
-      value: number;
-      currency: string;
-    };
-  };
-}
-
-export interface ProductImage {
-  url: string;
-}
+import {Image} from '@/types/Image';
+import {ProductPrice} from '@/types/ProductPrice';
 
 export interface Product {
   id: string;
   name: string;
   price: ProductPrice;
-  image: ProductImage;
+  image: Image;
   url_key: string;
 }
