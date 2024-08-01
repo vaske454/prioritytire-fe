@@ -5,6 +5,7 @@ import Navigation from "@/components/blocks/navigation/Navigation";
 import {MenuItem} from "@/types/MenuItem";
 import {fetchCategories} from "@/lib/fetchCategories";
 import SingleProduct from "@/components/blocks/single-product/SingleProduct";
+import ProductDetails from "@/components/blocks/product-details/ProductDetails";
 
 const ProductPage = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
@@ -35,6 +36,7 @@ const ProductPage = async ({ params }: { params: { id: string } }) => {
       <Header />
       <Navigation menuItems={menuItems} />
       <SingleProduct product={product} />
+      <ProductDetails product={product} />
     </main>
   );
 };

@@ -1,0 +1,16 @@
+.product-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-details-table th,
+.product-details-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.product-details-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}

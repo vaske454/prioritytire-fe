@@ -7,9 +7,10 @@ export const GET_PRODUCTS_QUERY = gql`
       items {
         id
         name
+        sku
         short_description {
-            html
-          }
+          html
+        }
         price {
           regularPrice {
             amount {
@@ -22,6 +23,28 @@ export const GET_PRODUCTS_QUERY = gql`
           url
         }
         url_key
+        stock_status
+        categories {
+          name
+        }
+        country_of_manufacture
+        activity
+        style_general
+        material
+        sleeve
+        size
+        collar
+        pattern
+        climate
+        color
+        eco_collection
+        performance_fabric
+        erin_recommends
+        new
+        sale
+        ... on PhysicalProductInterface {
+          weight
+        }
       }
     }
   }
@@ -30,9 +53,10 @@ export const GET_PRODUCTS_QUERY = gql`
       items {
         id
         name
+        sku
         short_description {
-            html
-          }
+          html
+        }
         price {
           regularPrice {
             amount {
@@ -45,6 +69,28 @@ export const GET_PRODUCTS_QUERY = gql`
           url
         }
         url_key
+        stock_status
+        categories {
+          name
+        }
+        country_of_manufacture
+        activity
+        style_general
+        material
+        sleeve
+        size
+        collar
+        pattern
+        climate
+        color
+        eco_collection
+        performance_fabric
+        erin_recommends
+        new
+        sale
+        ... on PhysicalProductInterface {
+          weight
+        }
       }
     }
   }
@@ -53,9 +99,10 @@ export const GET_PRODUCTS_QUERY = gql`
       items {
         id
         name
+        sku
         short_description {
-            html
-          }
+          html
+        }
         price {
           regularPrice {
             amount {
@@ -68,9 +115,30 @@ export const GET_PRODUCTS_QUERY = gql`
           url
         }
         url_key
+        stock_status
+        categories {
+          name
+        }
+        country_of_manufacture
+        activity
+        style_general
+        material
+        sleeve
+        size
+        collar
+        pattern
+        climate
+        color
+        eco_collection
+        performance_fabric
+        erin_recommends
+        new
+        sale
+        ... on PhysicalProductInterface {
+          weight
+        }
       }
     }
   }
 }
-
 `;
