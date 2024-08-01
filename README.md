@@ -2,9 +2,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, make sure you have a `.env.local` file in the root of your project with the following environment variables:
+```plaintext
+NEXT_PUBLIC_MAGENTO_URL=http://your-magento-url/graphql
+NEXT_PUBLIC_HYGRAPH_URL=https://your-hygraph-url/master
+```
+
+Then, run the development server:
 
 ```bash
+npm i
+
 npm run dev
 # or
 yarn dev
