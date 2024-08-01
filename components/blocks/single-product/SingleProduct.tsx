@@ -47,18 +47,6 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
             className="border border-gray-300 rounded-lg px-3 py-2 text-center w-24"
           />
         </div>
-        {/*<div className="single-product-quantity">*/}
-        {/*  <label htmlFor="quantity">Quantity:</label>*/}
-        {/*  <input*/}
-        {/*    type="number"*/}
-        {/*    id="quantity"*/}
-        {/*    name="quantity"*/}
-        {/*    value={quantity}*/}
-        {/*    onChange={handleQuantityChange}*/}
-        {/*    min="1"*/}
-        {/*    className="single-product-quantity-input"*/}
-        {/*  />*/}
-        {/*</div>*/}
         <button className="single-product-button">
           Add to Cart
         </button>
