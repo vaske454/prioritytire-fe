@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'http://prioritytire-be.ddev.site/graphql',
+  uri: process.env.NEXT_PUBLIC_MAGENTO_GRAPHQL_URI,
   cache: new InMemoryCache(),
 });
 
