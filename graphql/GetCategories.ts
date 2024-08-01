@@ -18,11 +18,6 @@ export const GET_CATEGORIES_QUERY = gql`
             id
             name
             product_count
-            children {
-              id
-              name
-              product_count
-            }
           }
         }
       }
