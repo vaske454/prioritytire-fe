@@ -4,22 +4,26 @@ import HeroBanner from '@/components/blocks/hero-banner/HeroBanner';
 import RebatesSlider from '@/components/blocks/rebates-slider/RebatesSlider';
 import Promotions from '@/components/blocks/promotions/Promotions';
 import PopularProducts from '@/components/blocks/popular-products/PopularProducts';
-import client from '@/lib/hygraphClient';
-import { GET_HYGRAPH_COLLECTIONS_QUERY } from '@/graphql/GetHygraphCollections';
-import {Collection} from '@/types/Collection';
+import { fetchCollections } from '@/lib/fetchCollections';
+import { fetchCategories } from '@/lib/fetchCategories';
+import { Collection } from '@/types/Collection';
+import { MenuItem } from '@/types/MenuItem';
 
 export default async function Home() {
-  const { data } = await client.query({
-    query: GET_HYGRAPH_COLLECTIONS_QUERY,
-    fetchPolicy: 'no-cache',
-  });
+  let collections: Collection[] = [];
+  let menuItems: MenuItem[] = [];
 
-  const collections: Collection[] = data.collections;
+  try {
+    collections = await fetchCollections();
+    menuItems = await fetchCategories();
+  } catch (error) {
+    console.error('Error fetching data: ', error);
+  }
 
   return (
     <main className="flex min-h-[100vh] flex-col relative">
       <Header />
-      <Navigation />
+      <Navigation menuItems={menuItems} />
       <HeroBanner />
       <RebatesSlider collections={collections} />
       <Promotions />
