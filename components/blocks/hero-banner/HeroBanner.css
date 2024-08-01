@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .hero-banner {
+        @apply relative;
+    }
+
+    .hero-banner-image {
+        @apply relative w-full h-auto;
+    }
+
+    .hero-banner-image-img {
+        @apply w-full h-full object-cover min-h-[480px];
+    }
+
+    .hero-banner-text {
+        @apply absolute inset-0 flex items-center justify-center px-4;
+    }
+
+    .hero-banner-title {
+        @apply text-white font-bold text-center;
+        @apply text-[26px] sm:text-[34px] md:text-[40px] lg:text-[46px] xl:text-[52px];
+        margin-top: clamp(-170px, -10vw, -150px);
+    }
+}

@@ -2,6 +2,7 @@ import { fetchProducts } from '@/lib/fetchProducts';
 import { Product } from '@/types/Product';
 import ErrorPage from '../../../components/ErrorPage';
 import Image from 'next/image';
+import './PopularProducts.css';
 
 const PopularProducts = async () => {
   let products: Product[] = [];
@@ -14,26 +15,26 @@ const PopularProducts = async () => {
   }
 
   return (
-    <div className="p-4">
-      <p className="text-2xl font-bold mb-6 text-center">Popular Products</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div className="popular-products-container">
+      <p className="popular-products-title">Popular Products</p>
+      <div className="popular-products-grid">
         {products.map((product) => (
-          <div key={product.id} className="bg-white p-4 border rounded-lg shadow-md flex flex-col">
+          <div key={product.id} className="popular-product-card">
             <Image
               src={product.image.url}
               alt={product.name}
               width={500}
               height={400}
-              className="w-full h-40 object-cover mb-2"
+              className="popular-product-image"
             />
-            <div className="flex-grow">
-              <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-              <p className="text-sm text-gray-600 mb-2">
+            <div className="popular-product-info">
+              <h3 className="popular-product-name">{product.name}</h3>
+              <p className="popular-product-price">
                 {product.price.regularPrice.amount.value} {product.price.regularPrice.amount.currency}
               </p>
             </div>
-            <div className="mt-auto">
-              <a href={`/product/${product.url_key}`} className="text-white hover:underline py-2 px-4 bg-orange-500 block text-center">
+            <div className="popular-product-action">
+              <a href={`/product/${product.url_key}`} className="popular-product-link">
                 View Product
               </a>
             </div>

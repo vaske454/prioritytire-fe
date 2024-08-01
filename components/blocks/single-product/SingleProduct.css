@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .single-product-container {
+        @apply p-4 flex flex-col lg:flex-row lg:items-start;
+    }
+
+    .single-product-image {
+        @apply flex-shrink-0 lg:w-1/2 lg:mr-6;
+    }
+
+    .single-product-image-img {
+        @apply w-full h-auto object-cover;
+    }
+
+    .single-product-info {
+        @apply lg:w-1/2 flex flex-col justify-between;
+    }
+
+    .single-product-title {
+        @apply text-2xl font-bold mb-2;
+    }
+
+    .single-product-description {
+        @apply text-lg mb-4;
+    }
+
+    .single-product-price {
+        @apply text-xl font-semibold mb-4;
+    }
+
+    .single-product-button {
+        @apply bg-orange-500 text-white px-4 py-2 rounded hover:underline;
+    }
+}

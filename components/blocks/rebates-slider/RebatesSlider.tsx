@@ -24,8 +24,8 @@ const RebatesSlider: React.FC<RebatesSliderProps> = ({ collections }) => {
   }
 
   return (
-    <div className="relative py-8 px-4">
-      <p className="block-title font-bold leading-relaxed text-4xl mt-5 mb-8 text-center">Save with Rebates</p>
+    <div className="rebates-slider-container">
+      <p className="rebates-slider-title">Save with Rebates</p>
       <Swiper
         slidesPerView={1}
         spaceBetween={20}
@@ -47,18 +47,18 @@ const RebatesSlider: React.FC<RebatesSliderProps> = ({ collections }) => {
       >
         {collections.map((collection: Collection) => (
           <SwiperSlide key={collection.id}>
-            <div className="rebate bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="rebate-card">
               <Image
                 src={collection.image.url}
                 alt={collection.name}
                 width={540}
                 height={284}
-                className="w-full h-auto"
+                className="rebate-image"
               />
-              <div className="p-4">
-                <h4 className="text-xl font-semibold mb-2">{collection.name}</h4>
-                <p className="text-gray-700 mb-4">{collection.description}</p>
-                <Link href="/" className="inline-block bg-orange-500 text-white py-2 px-4 rounded">
+              <div className="rebate-info">
+                <h4 className="rebate-title">{collection.name}</h4>
+                <p className="rebate-description">{collection.description}</p>
+                <Link href="/" className="rebate-link">
                   View Offer
                 </Link>
               </div>
@@ -67,30 +67,8 @@ const RebatesSlider: React.FC<RebatesSliderProps> = ({ collections }) => {
         ))}
       </Swiper>
 
-      <div className="swiper-button-prev absolute top-1/2 left-4 transform -translate-y-1/2 rotate-180"
-           style={{
-             backgroundImage: "url('https://prioritytire.com/static/version1722065952/frontend/TorqueDigital/prioritytire/en_US/images/icons/icon-slider-arrow.svg')",
-             backgroundSize: 'contain',
-             backgroundRepeat: 'no-repeat',
-             backgroundPosition: 'center',
-             height: '40px',
-             width: '40px',
-             fontSize: '0'
-           }}
-      >
-      </div>
-      <div className="swiper-button-next absolute top-1/2 right-4 transform -translate-y-1/2"
-           style={{
-             backgroundImage: "url('https://prioritytire.com/static/version1722065952/frontend/TorqueDigital/prioritytire/en_US/images/icons/icon-slider-arrow.svg')",
-             backgroundSize: 'contain',
-             backgroundRepeat: 'no-repeat',
-             backgroundPosition: 'center',
-             height: '40px',
-             width: '40px',
-             fontSize: '0'
-           }}
-      >
-      </div>
+      <div className="swiper-button-prev"></div>
+      <div className="swiper-button-next"></div>
     </div>
   );
 }

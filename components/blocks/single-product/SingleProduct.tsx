@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Product } from '@/types/Product';
+import './SingleProduct.css';
 
 interface SingleProductProps {
   product: Product;
@@ -10,24 +11,24 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
   const descriptionHtml = (product.short_description as unknown as { html: string }).html;
 
   return (
-    <div className="p-4 flex flex-col lg:flex-row lg:items-start">
-      <div className="flex-shrink-0 lg:w-1/2 lg:mr-6">
+    <div className="single-product-container">
+      <div className="single-product-image">
         <Image
           src={product.image.url}
           alt={product.name}
           width={436}
           height={436}
-          className="w-full h-auto object-cover"
+          className="single-product-image-img"
         />
       </div>
 
-      <div className="lg:w-1/2 flex flex-col justify-between">
-        <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
-        <div className="text-lg mb-4" dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
-        <p className="text-xl font-semibold mb-4">
+      <div className="single-product-info">
+        <h1 className="single-product-title">{product.name}</h1>
+        <div className="single-product-description" dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
+        <p className="single-product-price">
           {product.price.regularPrice.amount.value} {product.price.regularPrice.amount.currency}
         </p>
-        <button className="bg-orange-500 text-white px-4 py-2 rounded hover:underline">
+        <button className="single-product-button">
           Add to Cart
         </button>
       </div>

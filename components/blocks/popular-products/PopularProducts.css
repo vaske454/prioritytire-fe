@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .popular-products-container {
+        @apply p-4;
+    }
+
+    .popular-products-title {
+        @apply text-2xl font-bold mb-6 text-center;
+    }
+
+    .popular-products-grid {
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4;
+    }
+
+    .popular-product-card {
+        @apply bg-white p-4 border rounded-lg shadow-md flex flex-col;
+    }
+
+    .popular-product-image {
+        @apply w-full h-40 object-cover mb-2;
+    }
+
+    .popular-product-info {
+        @apply flex-grow;
+    }
+
+    .popular-product-name {
+        @apply text-lg font-semibold mb-2;
+    }
+
+    .popular-product-price {
+        @apply text-sm text-gray-600 mb-2;
+    }
+
+    .popular-product-action {
+        @apply mt-auto;
+    }
+
+    .popular-product-link {
+        @apply text-white hover:underline py-2 px-4 bg-orange-500 block text-center;
+    }
+}
