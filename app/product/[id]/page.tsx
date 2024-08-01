@@ -31,7 +31,7 @@ const ProductPage = async ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <main>
+    <main className="main-container">
       <Header />
       <Navigation menuItems={menuItems} />
       <SingleProduct product={product} />

@@ -21,7 +21,7 @@ export default async function Home() {
   }
 
   return (
-    <main className="flex min-h-[100vh] flex-col relative">
+    <main className="main-container">
       <Header />
       <Navigation menuItems={menuItems} />
       <HeroBanner />
