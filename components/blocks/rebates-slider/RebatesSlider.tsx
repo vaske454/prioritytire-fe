@@ -67,7 +67,7 @@ const RebatesSlider: React.FC<RebatesSliderProps> = ({ collections }) => {
         ))}
       </Swiper>
 
-      <div className="swiper-button-prev absolute top-1/2 left-4 transform -translate-y-1/2"
+      <div className="swiper-button-prev absolute top-1/2 left-4 transform -translate-y-1/2 rotate-180"
            style={{
              backgroundImage: "url('https://prioritytire.com/static/version1722065952/frontend/TorqueDigital/prioritytire/en_US/images/icons/icon-slider-arrow.svg')",
              backgroundSize: 'contain',
@@ -75,8 +75,7 @@ const RebatesSlider: React.FC<RebatesSliderProps> = ({ collections }) => {
              backgroundPosition: 'center',
              height: '40px',
              width: '40px',
-             fontSize: '0',
-             transform: 'rotate(180deg)'
+             fontSize: '0'
            }}
       >
       </div>
