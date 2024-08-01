@@ -2,11 +2,14 @@ import { gql } from '@apollo/client';
 
 export const GET_PRODUCTS_QUERY = gql`
   query GetProducts {
-  category1: category(id: "23") {
+  category1: category(id: 23) {
     products(pageSize: 5) {
       items {
         id
         name
+        short_description {
+            html
+          }
         price {
           regularPrice {
             amount {
@@ -22,11 +25,14 @@ export const GET_PRODUCTS_QUERY = gql`
       }
     }
   }
-  category2: category(id: "14") {
+  category2: category(id: 14) {
     products(pageSize: 5) {
       items {
         id
         name
+        short_description {
+            html
+          }
         price {
           regularPrice {
             amount {
@@ -42,11 +48,14 @@ export const GET_PRODUCTS_QUERY = gql`
       }
     }
   }
-  category3: category(id: "4") {
+  category3: category(id: 4) {
     products(pageSize: 5) {
       items {
         id
         name
+        short_description {
+            html
+          }
         price {
           regularPrice {
             amount {

@@ -1,14 +1,10 @@
 import { fetchProducts } from '@/lib/fetchProducts';
 import { Product } from '@/types/Product';
-import Image from 'next/image';
-export async function generateStaticParams() {
-  const result = await fetchProducts();
-  const products = result.products;
-
-  return products.map((product) => ({
-    id: product.url_key,
-  }));
-}
+import Header from "@/components/header/Header";
+import Navigation from "@/components/blocks/navigation/Navigation";
+import {MenuItem} from "@/types/MenuItem";
+import {fetchCategories} from "@/lib/fetchCategories";
+import SingleProduct from "@/components/blocks/single-product/SingleProduct";
 
 const ProductPage = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
@@ -17,6 +13,7 @@ const ProductPage = async ({ params }: { params: { id: string } }) => {
   try {
     const result = await fetchProducts();
     product = result.products.find((prod) => prod.url_key === id);
+    console.log(product);
   } catch (error) {
     console.error('Failed to fetch products', error);
   }
@@ -25,24 +22,20 @@ const ProductPage = async ({ params }: { params: { id: string } }) => {
     return <div>Product not found</div>;
   }
 
+  let menuItems: MenuItem[] = [];
+
+  try {
+    menuItems = await fetchCategories();
+  } catch (error) {
+    console.error('Error fetching data: ', error);
+  }
+
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
-      <Image
-        src={product.image.url}
-        alt={product.name}
-        width={436}
-        height={436}
-        className="w-full h-40 object-cover mb-2"
-      />
-      {/*<p className="text-lg mb-4">{product.description}</p>*/}
-      <p className="text-xl font-semibold mb-4">
-        {product.price.regularPrice.amount.value} {product.price.regularPrice.amount.currency}
-      </p>
-      <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-        Add to Cart
-      </button>
-    </div>
+    <main>
+      <Header />
+      <Navigation menuItems={menuItems} />
+      <SingleProduct product={product} />
+    </main>
   );
 };
 

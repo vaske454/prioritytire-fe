@@ -21,3 +21,23 @@
         @apply w-[50%]
     }
 }
+
+.authorization-link a::before {
+    content: url('https://prioritytire.com/static/version1722499260/frontend/TorqueDigital/prioritytire/en_US/images/icons/icon-account.svg');
+    display: inline-block;
+    margin-right: 8px; /* Adjust spacing if needed */
+    vertical-align: middle; /* Align image with the text */
+}
+
+.authorization-link a span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* Added line to prevent breaking */
+    border: 0;
+}
+
